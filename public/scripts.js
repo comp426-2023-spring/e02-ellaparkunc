@@ -25,15 +25,30 @@ function startOver() {
 }
 
 async function playGame(){
-    
+    let check = document.getElementById('opponent');
+
     let game = $('input[type=radio][name=game]:checked').val();
 
+    let shot = '';
+    if (check.checked == true) {
+        shot = $('input[type=radio][name=shot]:checked').val() + '/';
+    } 
     let baseurl = window.location.href + 'app/' //appending app/ will give our base url
     console.log(baseurl)
-    let url = baseurl + game + '/play/'
-    console.log(url)
+    let url = baseurl + game + '/play/' +shot
+    
 
     let response = await fetch(url)
-    let result = await response.json()
+    let results = await response.json()
     console.log(results)
+
+    let resultElement = document.getElementById('result');
+
+    if (check.checked == false) {
+        // Set results HTML for no shot
+        resultElement.innerHTML = 'Opponent: ' + results.player;
+    } else {
+        // Set results HTML for shot
+        resultElement.innerHTML = 'You: ' + results.player + ', Opponent: ' + results.opponent + ', Result: ' + results.result;
+    }
 }
