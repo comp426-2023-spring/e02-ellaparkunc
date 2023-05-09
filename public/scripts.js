@@ -2,18 +2,22 @@
 // check out the coin-server example from a previous COMP 426 semester.
 // https://github.com/jdmar3/coinserver
 
-
-function showHideShots(){
+function showHideShots() {
     let check = document.getElementById('opponent');
-    //let radiorps = document.getElementByClass('rps');
-    //let radiorpsls = document.getElementByClass('rpsls');
+    let radiorps = document.getElementById('rps');
 
-    if(check.checked == true){
-        $('.shots').show()
-    } else{
-        $('.shots').hide()
+    // Show or hide radio buttons
+    if (check.checked == true) {
+        $('.shots').show();
+        // Show or hide based on game selected
+        if (radiorps.checked == true) {
+            $('.rpsls').hide();
+        }
+    } else {
+        $('.shots').hide();
     }
 }
+
 
 function startOver() {
     document.getElementById('userinput').reset();
