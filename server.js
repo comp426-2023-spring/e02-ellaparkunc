@@ -102,3 +102,25 @@ process.on('SIGINT', () => {
         }    
     })
 })
+
+/*
+
+import {rps, rpsls} from '/controllers/game/js'
+
+app.get('/app/', (req, res, next) => {
+    res.status(200).send('200 OK');
+})
+
+app.get('/app/rps/play', (req, res, next) => {
+    res.setHeader('Content-Type', 'application/json')
+    res.status(200).send('200 OK').json(rps());
+})
+
+app.get('/app/rpsls/play', (req, res, next) => {
+    res.setHeader('Content-Type', 'application/json')
+    res.status(200).send('200 OK').json(rpsls());
+})
+
+app.all('/app/*, )
+
+*/
