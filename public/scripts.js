@@ -12,9 +12,6 @@ function showHideShots() {
     } else {
         $('.shots').hide();
     }
-
-
-
 }
 
 function startOver() {
@@ -62,8 +59,4 @@ async function playGame() {
         // Set results HTML for shot
         resultElement.innerHTML = 'You: ' + results.player + ', Opponent: ' + results.opponent + ', Result: ' + results.result;
     }
-    
-
-
-
 }

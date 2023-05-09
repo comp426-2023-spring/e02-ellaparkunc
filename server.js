@@ -62,9 +62,6 @@ const app = express()
 // Set a port for the server to listen on
 const port = args.port || args.p || process.env.PORT || 8080
 
-//
-// Start of my code
-//
 
 // Add API endpoints
 import { rpsls, rps } from './controllers/game.js';
@@ -73,7 +70,6 @@ import { rpsls, rps } from './controllers/game.js';
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-// Weird stuff
 var replacementString = '';
 
 app.get('/app/rps/', function(req, res) {
@@ -120,9 +116,7 @@ app.get("/app/", function(req, res) {
     res.status(200).send("200 OK").end();
 });
 
-//
-// End of my code
-//
+//end
 
 // Load app middleware here to serve routes, accept data requests, etc.
 //
